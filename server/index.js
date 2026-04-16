@@ -52,9 +52,7 @@ app.use("/api/messages", messageRoutes);
 
 handleSocket(io);
 
-module.exports = app;
-
-// server.listen(PORT, () => {
-//   console.log(`📡 Server listening on http://localhost:${PORT}`);
-// });
+server.listen(PORT, () => {
+  console.log(`📡 Server listening on http://localhost:${PORT}`);
+});
 

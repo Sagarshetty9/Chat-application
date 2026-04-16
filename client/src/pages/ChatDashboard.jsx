@@ -4,7 +4,7 @@ import axios from 'axios';
 import Sidebar from '../components/Sidebar';
 
 // Initialize socket outside the component to prevent multiple connections
-const socket = io("http://localhost:5000");
+const socket = io("https://chat-application-626w.onrender.com");
 
 const ChatDashboard = () => {
   const [messages, setMessages] = useState([]);

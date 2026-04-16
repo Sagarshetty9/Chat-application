@@ -41,7 +41,7 @@ const ChatDashboard = () => {
 
     try {
       // GET request to your new backend route for history
-      const res = await axios.get(`http://localhost:5000/api/messages/${roomID}`);
+      const res = await axios.get(`https://chat-application-626w.onrender.com/api/messages/${roomID}`);
       setMessages(res.data); 
     } catch (err) {
       console.error("Error loading chat history:", err);

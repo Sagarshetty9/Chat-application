@@ -8,7 +8,7 @@ const Sidebar = ({ onSelectUser, currentUser }) => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/users");
+        const res = await axios.get("https://chat-application-626w.onrender.com/api/users");
         // Filter out the logged-in user so you don't chat with yourself
         const filtered = res.data.filter(u => u._id !== currentUser.id);
         setUsers(filtered);

@@ -14,7 +14,7 @@ const Auth = () => {
     const endpoint = isLogin ? 'login' : 'register';
     
     try {
-      const res = await axios.post(`http://localhost:5000/api/users/${endpoint}`, formData);
+      const res = await axios.post(`https://chat-application-626w.onrender.com/api/users/${endpoint}`, formData);
       if (isLogin) {
         localStorage.setItem('token', res.data.token);
         localStorage.setItem('user', JSON.stringify(res.data.user));

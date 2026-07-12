@@ -168,19 +168,6 @@ https://chat-application-626w.onrender.com
 
 ---
 
-# Future Improvements
-
-- Typing indicator
-- Online/offline user status
-- Read/Delivered message status
-- Image and file sharing
-- Emoji support
-- Group chat management
-- Push notifications
-- Message search
-
----
-
 # Author
 
 **Sagar Shetty**

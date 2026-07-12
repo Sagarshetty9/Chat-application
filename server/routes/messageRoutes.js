@@ -1,10 +1,11 @@
 import express from "express";
 import Message from "../models/Message.js";
 import {fetchHistory} from "../controllers/messageController.js"
+import { verifyToken } from "../middleware/auth.js"
 
-const MessageRouter = express.Router();
+const messageRouter = express.Router();
 
 
-MessageRouter.get("/:roomID", fetchHistory)
+messageRouter.get("/:roomID", verifyToken, fetchHistory)
 
-export default MessageRouter;
+export default messageRouter;

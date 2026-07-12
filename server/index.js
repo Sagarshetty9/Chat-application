@@ -7,8 +7,8 @@ import http from "http";
 import { initSocket } from "./config/socket_config.js";
 import { handleSocket } from "./controllers/socketController.js";
 
-import messageRoutes from "./routes/messageRoutes.js";
-import userRoutes from './routes/userRoutes.js';
+import messageRouter from "./routes/messageRoutes.js";
+import userRouter from './routes/userRoutes.js';
 
 
 // Load env vars
@@ -39,8 +39,8 @@ app.get('/', (req, res) => {
   res.send("Server is up and running ✅");
 });
 
-app.use('/api/users', userRoutes);
-app.use("/api/messages", messageRoutes);
+app.use('/api/users', userRouter);
+app.use("/api/messages", messageRouter);
 
 
 handleSocket(io);

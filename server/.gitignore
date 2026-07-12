@@ -26,7 +26,3 @@ pids
 *.ntvs*
 *.njsproj
 *.sln
-# Project root PDFs
-/chat app synopsis.pdf
-/chatApp overview.pdf
-/Project overview.pdf

@@ -1,9 +1,7 @@
-import Message from "../models/Message.js"
-
+import Message from "../models/Message.js";
 
 export const handleSocket = (io) => {
-
-  //When a socket/User connects 
+  //When a socket/User connects
   io.on("connection", (socket) => {
     console.log(`User connected ${socket.id}`);
 
@@ -13,8 +11,7 @@ export const handleSocket = (io) => {
       console.log(`User joined room: ${roomID}`);
     });
 
-
-    //Handling all messaging stuff 
+    //Handling all messaging stuff
     socket.on("send_message", async (data) => {
       try {
         const newMessage = new Message({
@@ -28,12 +25,20 @@ export const handleSocket = (io) => {
         console.log("Message saved to DB");
 
         io.to(data.room).emit("receive_message", data);
-        //socket.to(data.room).emit("receive_message", data);
+
 
       } catch (err) {
         console.error("Failed to save message:", err);
       }
     });
+
+    socket.on("typing", (roomID) => {
+          socket.to(roomID).emit("user_typing");
+        });
+
+        socket.on("stop_typing", (roomID) => {
+          socket.to(roomID).emit("user_stop_typing");
+        });
 
     socket.on("disconnect", () => {
       console.log(`User disconnected ${socket.id}`);

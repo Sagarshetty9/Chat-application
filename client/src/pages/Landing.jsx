@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import canvaImg from '../assets/canvaImage.png'
 
 const Landing = () => {
   return (
@@ -12,7 +13,7 @@ const Landing = () => {
         </div>
 
         <div className='flex-1 h-auto'>
-          <img src={'canvaImage.png'} alt="" />
+          <img src={canvaImg} alt="" />
 
         </div>
      

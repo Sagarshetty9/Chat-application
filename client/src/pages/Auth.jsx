@@ -14,11 +14,11 @@ const Auth = () => {
     const endpoint = isLogin ? 'login' : 'register';
     
     try {
-      const res = await axios.post(`https://chat-application-626w.onrender.com/api/users/${endpoint}`, formData);
+      const res = await axios.post( `${import.meta.env.VITE_BACKEND_URL}/api/users/${endpoint}`, formData);
       if (isLogin) {
         localStorage.setItem('token', res.data.token);
         localStorage.setItem('user', JSON.stringify(res.data.user));
-        navigate('/chat'); // Redirect to dashboard
+        window.location.href = "/chat";
       } else {
         alert("Registration Successful! Please Login.");
         setIsLogin(true);

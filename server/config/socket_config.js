@@ -9,6 +9,7 @@ export const initSocket = (server) => {
       credentials: true,
     },
   });
+    return io;  
 };
 
 export const getIO = () => io;

@@ -5,12 +5,11 @@ let io;
 export const initSocket = (server) => {
   io = new Server(server, {
     cors: {
-      origin: "*",
+      // 🟢 CHANGED: Match your frontend production URL instead of using "*"
+      origin: [process.env.CLIENT_URL], 
       credentials: true,
     },
   });
-
-  return io;
 };
 
 export const getIO = () => io;
